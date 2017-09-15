@@ -102,10 +102,15 @@ namespace LoopNote
             }
             else
             {
-                NoteList = null;
-                IsFinished = false;
+                SetDefaultVariable();
                 SetTimeOut();
             }
+        }
+
+        private void SetDefaultVariable()
+        {
+            NoteList = null;
+            IsFinished = false;
         }
 
         private void SetTimeOut()

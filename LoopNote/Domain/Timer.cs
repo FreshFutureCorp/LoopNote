@@ -22,7 +22,6 @@ namespace LoopNote.Domain
 
         public string StartTimer(int count)
         {
-
             if (count > 0)
                 return String.Concat(count);
 
