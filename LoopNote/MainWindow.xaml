@@ -17,7 +17,9 @@
 
         <Label Name="textTimer" Content="" HorizontalAlignment="Left" Margin="153,329,0,0" VerticalAlignment="Top" TextBlock.FontStretch="UltraCondensed" HorizontalContentAlignment="Center" FontSize="40px" Height="56" Width="184"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="213" Margin="77,111,0,0" VerticalAlignment="Top" Width="319" Grid.ColumnSpan="2"/>
-        <Button Name="TimerButton" Content="Start" Margin="157,390,30,0" VerticalAlignment="Top" Height="58" RenderTransformOrigin="0.5,0.5" Click="RunOrStopTimer" />
+        <Button Name="TimerButton" ContentStringFormat="Start" Margin="157,390,30,0" VerticalAlignment="Top" Height="58" RenderTransformOrigin="0.5,0.5" Click="RunOrStopTimer">
+            <Image Name="TimerButtonImage" Source="Image/play.png"></Image>
+        </Button>
 
     </Grid>
 </Window>

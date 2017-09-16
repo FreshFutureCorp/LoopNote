@@ -62,7 +62,7 @@ namespace LoopNote
             if (NoteList == null)
                 NoteList = NoteTypeList.AllNoteType.ToList();
 
-            if (button.Content.Equals("Start"))
+            if (button.ContentStringFormat.Equals("Start"))
             {
                 RandomizeNote();
                 SetTimeRun();
@@ -122,7 +122,8 @@ namespace LoopNote
 
         private void SetDefaultValueLabel()
         {
-            TimerButton.Content = "Start";
+            TimerButton.ContentStringFormat = "Start";
+            TimerButtonImage.Source = new BitmapImage(new Uri(@"Image/play.png", UriKind.Relative));
             NoteLabel.Content = "";
             textTimer.Content = "";
         }
@@ -131,7 +132,8 @@ namespace LoopNote
         {
             textTimer.Content = Timer.Time;
             this.TimerDisp.Interval = new TimeSpan(0, 0, 1);
-            TimerButton.Content = "Stop";
+            TimerButton.ContentStringFormat = "Stop";
+            TimerButtonImage.Source = new BitmapImage(new Uri(@"Image/stop.png", UriKind.Relative));
             TimerDisp.Start();
         }
     }
