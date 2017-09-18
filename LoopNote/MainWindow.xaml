@@ -9,17 +9,32 @@
         Loaded="EntityLoader">
     <Grid Margin="0,0,2,-1" Height="490" VerticalAlignment="Top" RenderTransformOrigin="0.504,0.438">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="367*"/>
-            <ColumnDefinition Width="109*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Label Content="NOTE" HorizontalAlignment="Left" Height="71" Margin="176,10,0,0" FontSize="50px"  VerticalAlignment="Top" TextBlock.TextAlignment="Center" Width="143"/>
-        <Label Name="NoteLabel" Content="" HorizontalAlignment="Left" Height="213" Margin="77,111,0,0" FontSize="150px"  VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="319" Grid.ColumnSpan="2"/>
+        <Label Name="NoteLabel" Content="" HorizontalAlignment="Left" Height="213" Margin="77,111,0,0" FontSize="150px"  VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="319"/>
 
-        <Label Name="textTimer" Content="" HorizontalAlignment="Left" Margin="153,329,0,0" VerticalAlignment="Top" TextBlock.FontStretch="UltraCondensed" HorizontalContentAlignment="Center" FontSize="40px" Height="56" Width="184"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="213" Margin="77,111,0,0" VerticalAlignment="Top" Width="319" Grid.ColumnSpan="2"/>
-        <Button Name="TimerButton" ContentStringFormat="Start" Margin="157,390,30,0" VerticalAlignment="Top" Height="58" RenderTransformOrigin="0.5,0.5" Click="RunOrStopTimer">
-            <Image Name="TimerButtonImage" Source="Image/play.png"></Image>
-        </Button>
+        <Label Name="textTimer" Content="" Margin="153,329,153,0" VerticalAlignment="Top" TextBlock.FontStretch="UltraCondensed" HorizontalContentAlignment="Center" FontSize="40px" Height="56"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="213" Margin="77,111,0,0" VerticalAlignment="Top" Width="319"/>
+        <Border>
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Style.Triggers>
+                        <Trigger Property="Border.IsMouseOver" Value="True">
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.5"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Image Name="TimerButtonImage" Tag="Start" Source="Image/play.png" Margin="153,389,153,19" MouseDown="RunOrStopTimer">
+            </Image>
+        </Border>
+
 
     </Grid>
 </Window>

@@ -56,7 +56,7 @@ namespace LoopNote
 
         public void RunOrStopTimer(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
+            Image imageController = (Image)sender;
 
             if (random == null)
                 random = new Random();
@@ -64,7 +64,7 @@ namespace LoopNote
             if (NoteList == null)
                 NoteList = NoteTypeList.AllDefaultNoteType.ToList();
 
-            if (button.ContentStringFormat.Equals("Start"))
+            if (imageController.Tag.Equals("Start"))
             {
                 RandomizeNote();
                 SetTimeRun();
@@ -124,7 +124,7 @@ namespace LoopNote
 
         private void SetDefaultValueLabel()
         {
-            TimerButton.ContentStringFormat = "Start";
+            TimerButtonImage.Tag = "Start";
             TimerButtonImage.Source = new BitmapImage(new Uri(@"Image/play.png", UriKind.Relative));
             NoteLabel.Content = "";
             textTimer.Content = "";
@@ -134,7 +134,7 @@ namespace LoopNote
         {
             textTimer.Content = Timer.Time;
             this.TimerDisp.Interval = new TimeSpan(0, 0, 1);
-            TimerButton.ContentStringFormat = "Stop";
+            TimerButtonImage.Tag = "Stop";
             TimerButtonImage.Source = new BitmapImage(new Uri(@"Image/stop.png", UriKind.Relative));
             TimerDisp.Start();
         }

@@ -115,9 +115,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\616449-64.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
