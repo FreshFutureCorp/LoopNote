@@ -30,13 +30,16 @@ namespace LoopNote
 
         public void EntityLoader(object sender, EventArgs e)
         {
-            this.Timer = new Timer();
 
+            #region Timer
+
+            this.Timer = new Timer();
             this.TimerDisp = new DispatcherTimer();
             this.TimerDisp.Tick += new EventHandler(TimerDispatcher);
-
             this.TimeSpan = TimeSpan.FromSeconds(Timer.Time);
 
+            #endregion
+           
         }
 
 
@@ -47,7 +50,6 @@ namespace LoopNote
         public Timer Timer;
         public List<NoteType> NoteList = null;
         public bool IsFinished = false;
-
 
         private Random random = null;
         #endregion
@@ -60,7 +62,7 @@ namespace LoopNote
                 random = new Random();
 
             if (NoteList == null)
-                NoteList = NoteTypeList.AllNoteType.ToList();
+                NoteList = NoteTypeList.AllDefaultNoteType.ToList();
 
             if (button.Content.Equals("Start"))
             {
