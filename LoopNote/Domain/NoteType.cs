@@ -51,7 +51,7 @@ namespace LoopNote.Domain
 
 
         public NoteTypeList() : base(AllDefaultNoteType)
-        {
+        {  
         }
 
     }
