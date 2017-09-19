@@ -37,13 +37,22 @@ namespace LoopNote.Domain
         public static NoteType La = new NoteType(5, "La");
         public static NoteType Si = new NoteType(6, "Si");
 
-        public static ReadOnlyCollection<NoteType> AllNoteType = new ReadOnlyCollection<NoteType>(new List<NoteType>() { Do, Re, Mi, Fa, Sol, La, Si });
+
+        public static NoteType DoH = new NoteType(7, "Do↑");
+        public static NoteType ReH = new NoteType(8, "Re↑");
+        public static NoteType MiH = new NoteType(9, "Mi↑");
+        public static NoteType FaH = new NoteType(10, "Fa↑");
+        public static NoteType SolH = new NoteType(11, "Sol↑");
+        public static NoteType LaH = new NoteType(12, "La↑");
+        public static NoteType SiH = new NoteType(13, "Si↑");
+
+        public static ReadOnlyCollection<NoteType> AllDefaultNoteType = new ReadOnlyCollection<NoteType>(new List<NoteType>() { Do, Re, Mi, Fa, Sol, La, Si });
+        public static ReadOnlyCollection<NoteType> AllHighNoteType = new ReadOnlyCollection<NoteType>(new List<NoteType>() { DoH, ReH, MiH, FaH, SolH, LaH, SiH });
 
 
-        public NoteTypeList() : base(AllNoteType)
+        public NoteTypeList() : base(AllDefaultNoteType)
         {
         }
-
 
     }
 
